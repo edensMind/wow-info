@@ -16,3 +16,10 @@ html {
 .box-shadow {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
+
+.banner-text {
+  /* color: #f8b700; */
+  color: #ffe08b;
+  margin-left: 20px;
+  font-weight: 500; 
+}

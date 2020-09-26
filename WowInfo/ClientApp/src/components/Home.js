@@ -3,6 +3,7 @@ import axios from 'axios';
 import queryString from 'query-string';
 import Login from './Login'
 import CharacterList from './CharacterList'
+import { Spinner  } from 'reactstrap';
 
 export class Home extends Component {
   constructor(props) {
@@ -45,9 +46,9 @@ export class Home extends Component {
         <CharacterList />
       );
     }
-    // Render nothing at first
+    // Render spinner at first
     else {
-      return <></>
+      return <><Spinner color="light" /></>
     }
   }
 }
