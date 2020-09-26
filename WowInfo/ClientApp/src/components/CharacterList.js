@@ -15,11 +15,10 @@ class CharacterList extends Component {
     axios.get(`/api/characters`)
     .then(res => {
         const charList = res.data.wow_accounts[0].characters
-        console.log(charList);
         this.setState({ characters: charList });
     })
     .catch(error => {
-        this.setState({ characters: null });
+        this.setState({ characters: [] });
     });
   }
 
