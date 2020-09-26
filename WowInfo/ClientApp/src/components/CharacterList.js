@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Spinner } from 'reactstrap';
+import classMapping from '../classes';
 
 class CharacterList extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-        characters: []
+        characters: [],
+        loading: true
     };
   }
 
@@ -15,21 +18,32 @@ class CharacterList extends Component {
     axios.get(`/api/characters`)
     .then(res => {
         const charList = res.data.wow_accounts[0].characters
-        this.setState({ characters: charList });
+        console.log(charList);
+        this.setState({ characters: charList, loading: false });
     })
     .catch(error => {
-        this.setState({ characters: [] });
+        this.setState({ characters: [], loading: false });
     });
   }
 
   render () {
-    return (
+    // Render spinner at first
+    if(this.state.loading) {
+      return(<Spinner color="light" />)
+    }
+    // Render list
+    else {
+      return (
         <>
             {this.state.characters.map((char) => (
-                <p key={char.id}>{char.name}</p>
+                <>
+                <img src="asd"></img>
+                <p key={char.id}>{char.name}, {char.level}, {char.faction.name}, {char.playable_race.name}, {char.playable_class.name}, {char.gender.name}, {char.realm.name}</p>
+                </>
             ))}
         </>
-    )
+      )
+    }
   }
 }
 
