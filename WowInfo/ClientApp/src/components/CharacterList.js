@@ -38,7 +38,7 @@ class CharacterList extends Component {
             {this.state.characters.map((char) => (
                 <>
                 <img src={process.env.PUBLIC_URL + '/assets/class_icons/' + classMapping[char.playable_class.name].icon} alt="class icon"></img>
-                <span key={char.id}>{char.name}, {char.level}, {char.faction.name}, {char.playable_race.name}, {char.playable_class.name}, {char.gender.name}, {char.realm.name}</span>
+                <span key={char.id}>{char.name}, {char.level}, {char.faction.name}, {char.playable_race.name}, {char.realm.name}</span>
                 <br/>
                 </>
             ))}
