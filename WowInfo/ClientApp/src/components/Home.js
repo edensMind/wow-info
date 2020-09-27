@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import queryString from 'query-string';
+
 import Login from './Login'
 import CharacterList from './CharacterList'
-import { Spinner  } from 'reactstrap';
+import LoadingSpinner from './LoadingSpinner'
 
 export class Home extends Component {
   constructor(props) {
@@ -48,7 +49,11 @@ export class Home extends Component {
     }
     // Render spinner at first
     else {
-      return <><Spinner color="light" /></>
+      return (
+        <>
+        <LoadingSpinner />
+        </>
+      )
     }
   }
 }
