@@ -1,0 +1,13 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information"
+    }
+  },
+  "AllowedHosts": "*",
+  "ClientCredentials": "<WoW API client creds base64 string>",
+  "RedirectUrl": "<Redirect Url, registerd in WoW API client>",
+  "BaseApiUrl": "https://us.api.blizzard.com"
+}
